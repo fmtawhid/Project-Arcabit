@@ -1,0 +1,679 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+  }
+.menu {
+    display: flex;
+    background-color: #151515;
+    padding: 30px;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 14px;
+    padding-left: 100px;
+    position: fixed; 
+
+    width: 100%; 
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; 
+    z-index: 1000; 
+}
+
+.menu.scrolled {
+    background-color: white; 
+    color: black; 
+
+}
+.menu.scrolled li:hover a::after {
+    background: red;
+}
+
+.menu-hidden {
+    transform: translateY(-100%); 
+}
+
+.menu-visible {
+    transform: translateY(0); 
+}
+
+.menu img {
+    height: 45px;
+    margin-right: 20px;
+    padding-right: 50px;
+    margin-top: auto;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    position: relative;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    color: #BBB; 
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: background 0.3s, color 0.3s; 
+    display: inline-block;
+}
+
+.menu.scrolled a {
+    color: black;
+    
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: left; 
+    transition: transform 0.3s ease;
+}
+
+.menu li:hover a::after {
+    transform: scaleX(1);
+}
+
+.product_menu {
+    border: 2px solid rgb(255, 255, 255); 
+    border-radius: 35px;
+    height: 33px; 
+    color: rgb(255, 255, 255); 
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.menu.scrolled .product_menu {
+    border: 2px solid black; 
+    color: black;
+}
+
+
+.dropdown_content {
+    display: block;
+    position: absolute;
+    border-radius: 10px;
+    padding: 30px;
+    width: 300px;
+    margin-left: 80px;
+    margin-top: 350px;
+    opacity: 0; 
+    visibility: hidden; 
+    transform: translateY(20px); 
+    transition: all 0.3s ease;
+    
+}
+
+.product_menu:hover .dropdown_content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); 
+}
+
+.dropdown_content a {
+    color: #151515;
+    padding: 8px 26px;
+    text-decoration: none;
+    display: block;
+    background-color: white;
+    font-size: 15px;
+}
+
+.dropdown_content a:hover {
+    color: red;
+}
+
+.drop_icon {
+    margin-left: 5px;
+}
+
+.menu-hidden {
+    opacity: 0; /* Hide the menu */
+    transition: opacity 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .menu-items {
+        display: none; 
+        flex-direction: column;
+        width: 100%; 
+        position: absolute; /* Position the dropdown */
+        top: 70px; /* Below the menu */
+        left: 0;
+        background-color: #151515; /* Match background */
+        padding: 20px 0; /* Padding for dropdown */
+    }
+
+    .menu-items.show {
+        display: flex; /* Show items when toggled */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger on small screens */
+    }
+
+    .product_menu {
+        display: block;
+    }
+}
+
+
+
+.row {
+    display: flex;
+    background-color: #151515;
+    flex-wrap: wrap; 
+    padding-top: 84px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+}
+
+.column {
+    flex: 50%; /* Default to half width */
+    padding: 10px;
+    height: auto; /* Adjust height to auto */
+    align-content: center;
+}
+
+.header_img {
+    width: 100%; /* Make image responsive */
+    max-width: 500px; /* Limit max width */
+    margin-left: 47px;
+}
+
+.header_title {
+    color: #FFF;
+    font-size: 38px;
+    font-family: Montserrat;
+    line-height: 30px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.header_pera {
+    color: #8E8E8E;
+    font-size: 19px;
+    font-family: Montserrat;
+    margin-top: 20px;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.hiro-text{
+    padding-left: 30px;
+}
+
+.icon-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background: linear-gradient(to right, #8f1014, #E01E23);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 40px;
+    font-family: Poppins;
+    letter-spacing: 2px;
+    font-weight: 600;
+    transition: background-position 0.6s ease; /* Transition on background-position */
+    background-size: 200%; /* Makes the gradient larger for sliding effect */
+    background-position: left; /* Default position */
+}
+
+.icon-button:hover {
+    background-position: right;
+    
+}
+
+
+.icon {
+    margin-left: 8px;
+    background-color: #e94f54;
+    padding: 5px;
+    border-radius: 50px;
+}
+
+.small_txt {
+    color: #474747;
+    margin: 10px;
+    font-family: Montserrat;
+    font-size: 13px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .column {
+        flex: 100%; /* Stack columns vertically */
+        padding: 20px; /* Increase padding */
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    .header_img {
+        margin-left: 0; /* Remove left margin on smaller screens */
+        max-width: 100%; /* Ensure image does not exceed screen width */
+    }
+
+    .header_title {
+        font-size: 32px; /* Smaller title for mobile */
+    }
+
+    .header_pera {
+        font-size: 16px; /* Smaller paragraph for mobile */
+    }
+
+    .icon-button {
+        font-size: 12px; /* Adjust button font size */
+        padding: 8px 12px; /* Adjust button padding */
+    }
+
+    .small_txt {
+        font-size: 12px; /* Smaller text for mobile */
+    }
+}
+
+
+#fws_6721d5e3e2627, .wpb_row, .vc_row-fluid, .row-bg-wrap {
+    margin-top: -90px !important;
+}
+
+/*- Section 1 -*/
+.section_1 {
+    background-color: #1E1E1E;
+    padding: 0 0px 100px 0px;
+    text-align: center;
+    margin: auto;
+}
+
+.row_1 {
+    display: flex;
+    flex-wrap: wrap; 
+    width: 100%; 
+    max-width: 950px; 
+    margin: auto;
+}
+
+.column_1 {
+    flex: 30%; /* Default to 30% width for larger screens */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.icon_1 {
+    font-size: 40px !important;
+    color: #b6151a;
+    background-color: #321e1f;
+    width: 70px;
+    border-radius: 80px;
+    padding: 10px;
+    text-align: center;
+    margin: auto;
+}
+
+.title_1 {
+    color: #DBDBDB;
+    font-size: 16px;
+    margin-top: 20px;
+    font-family: Montserrat;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .column_1 {
+        flex: 100%; /* Stack columns vertically on smaller screens */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .title_1 {
+        font-size: 14px; /* Smaller title for mobile */
+    }
+
+    .icon_1 {
+        font-size: 30px !important; /* Adjust icon size for mobile */
+        width: 50px; /* Smaller width */
+    }
+}
+
+/*- Section 2 -*/
+.section_2{
+    padding: 10px 0px 0px 0px;
+    width: 88%;
+    margin: auto;
+    font-family: Montserrat;
+}
+.title_2{
+    font-size: 38px;
+    text-align: center;
+    font-family: Montserrat;
+    margin-bottom: 60px;
+    letter-spacing: -1px;
+}
+.row_2{
+    display: flex;
+}
+.icon_2{
+    font-size: 50px;
+    color: #be2424;
+}
+.title_2_box{
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    font-weight: 600;
+    font-family: Montserrat;
+    margin-top: 20px;
+}
+
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 600px;
+    perspective: 1000px;
+    flex: 25%;
+    margin: 10px;
+    font-family: Montserrat;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(-180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    padding: 10px;
+}
+
+.flip-card-front {
+    background-color: #F9F9F9;
+    color: black;
+    padding-top: 250px;
+    padding-left: 35px;
+}
+
+.flip-card-back {
+    background-color: #e31e24;
+    color: white;
+    transform: rotateY(-180deg);
+    display: flex;
+    align-items: center;
+    overflow: hidden; 
+}
+
+.back-text {
+    position: relative;
+    transform: translateX(100%); 
+    transition: transform 0.6s ; 
+    font-size: 13px;
+    padding: 15px;
+    line-height: 200%;
+    display: flex;
+    left: 0;
+    right: auto;
+}
+
+.flip-card:hover .back-text {
+    transform: translateX(0); 
+}
+
+
+/* Section 3 */
+
+.section_3{
+    padding: 65px 0px 0px 0px;
+    width: 88%;
+    margin: auto;
+}
+
+/* section 4 */
+
+.section_4 {
+    background-image: url('https://arcabit.pl/wp-content/uploads/2021/02/biznes.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    position: relative; 
+    color: rgb(243, 239, 239); 
+    height: 600px;
+    align-content: center;
+    padding-left: 100px;
+    margin-top: 60px;
+    z-index: 1;
+
+    
+    
+}
+
+.section_4::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(219, 32, 32, 0.801); 
+    z-index: 1;
+}
+
+.section_4 h1,
+.section_4 h3,
+.section_4 .icon-button-1 {
+    position: relative;
+    z-index: 2; 
+}
+.section_4 h1{
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 700;
+}
+.section_4 h3{
+    font-family: Montserrat;
+    font-size: 19px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+
+.icon-button-1{
+    display: flex;
+    align-items: center;
+    padding: 7px 7px 7px 22px;
+    background-color: black;
+    color: #e31910;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    border-radius: 30px;
+    margin-top: 30px;
+    font-family: Poppins;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+
+.icon-1{
+    margin-left: 20px;
+    background-color: #383838;
+    padding: 8px 10px;
+    border-radius: 50%;
+    margin-right: 0px;
+}
+
+/* Footer */
+
+.footer {
+    background-color: #000000;
+    color: #CCC;
+    padding: 80px 40px;
+}
+
+.row_fot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.column_fot {
+    flex: 1;
+    min-width: 200px;
+    max-width: 25%;
+    margin-bottom: 20px;
+    padding-left: 50px;
+}
+
+.title_fot {
+    font-size: 16px;
+    font-family: Poppins;
+    color: #777;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+.footer ul {
+    list-style-type: none;
+    line-height: 160%;
+    padding: 0;
+    margin: 0;
+    line-height: 30px;
+}
+
+.footer ul li {
+    font-family: Montserrat;
+    font-size: 12px;
+}
+
+.footer ul li a {
+    font-size: 15px;
+    font-family: Montserrat;
+    color: #CCC;
+    text-decoration: none;
+    position: relative;
+    font-weight: 700;
+}
+
+.footer ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #CCC;
+    transition: width 0.3s ease;
+}
+
+.footer ul li a:hover::after {
+    width: 100%;
+}
+
+.fot-logo {
+    padding-left: 0;
+    max-width: 150px;
+    margin-left: 60px;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .row_fot {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column_fot {
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .fot-logo {
+        max-width: 100px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title_fot {
+        font-size: 14px;
+    }
+
+    .footer ul li a {
+        font-size: 14px;
+    }
+
+    .fot-logo {
+        max-width: 80px;
+    }
+}
+
+.fm{
+    text-transform: uppercase;
+}
+
+
+.bottom-nav{
+    border-top: 1px solid #151515;
+    background-color: #000000;
+    height: 70px;
+    padding: 10px;
+    color: white;
+    align-items: center;
+    display: flex;
+}
+    
+.bottom-title{
+    font-size: 15px;
+    font-family: Montserrat;
+    color: #4d4241;
+    margin-left: 80px;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #272525;
+    color: white;
+    opacity: 0.5;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+    display: none;
+    border-radius: 50%;
+}
+.back-to-top i{
+    color: white;
+}
