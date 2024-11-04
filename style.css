@@ -115,7 +115,7 @@
     bottom: 10px;
     height: 2px;
     width: 80%; 
-    background: rgb(0, 0, 0);
+    background: white;
     margin: 0 auto; 
     transform: scaleX(0);
     transform-origin: left;
@@ -383,12 +383,15 @@
     width: 100%; 
     max-width: 950px; 
     margin: auto;
+
 }
 
 .column_1 {
     flex: 30%;
     padding: 20px;
     box-sizing: border-box; 
+    display: flex;
+    flex-direction: column;
 }
 
 .icon_1 {
@@ -408,6 +411,7 @@
     margin-top: 20px;
     font-family: Montserrat;
     line-height: 30px;
+
 }
 
 /* Media Queries for Responsive Design */
