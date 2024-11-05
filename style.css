@@ -7,7 +7,7 @@
 .menu {
     display: flex;
     background-color: #151515;
-    padding: 30px;
+    padding: 32px;
     font-family: Montserrat;
     font-weight: 700;
     font-size: 14px;
@@ -21,9 +21,8 @@
 .menu.scrolled {
     background-color: white; 
     color: black;
-
-
 }
+
 .menu.scrolled li:hover a::after {
     background: red;
 }
@@ -283,7 +282,7 @@
 .icon-button {
     display: flex;
     align-items: center;
-    padding: 10px 15px;
+    padding: 10px 10px 10px 25px;
     background: linear-gradient(to right, #8f1014, #E01E23); 
     color: white;
     border: none;
@@ -324,6 +323,7 @@
     background-color: #e94f54;
     padding: 5px;
     border-radius: 50px;
+
 }
 
 .small_txt {
